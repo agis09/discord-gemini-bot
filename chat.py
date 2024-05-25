@@ -75,19 +75,4 @@ def download_image(url, timeout=10):
     return response.content
 
 
-# 画像のファイル名を決める
-def make_filename(base_dir, number, url):
-    ext = os.path.splitext(url)[1]  # 拡張子を取得
-    filename = number + ext  # 番号に拡張子をつけてファイル名にする
-
-    fullpath = os.path.join(base_dir, filename)
-    return fullpath
-
-
-# 画像を保存する
-def save_image(filename, image):
-    with open(filename, "wb") as fout:
-        fout.write(image)
-
-
 client.run(os.environ["DISCORD_API_TOKEN"])
